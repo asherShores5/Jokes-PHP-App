@@ -85,6 +85,8 @@
         </form>
     </div>
 
+    <a href="index.php">Return to main page</a>
+
     <script>
         $(document).ready(function() {
             $('#password1, #password2').on('keyup', function() {

@@ -48,6 +48,8 @@
             </fieldset>
         </form>
 
+        <a href="index.php">Return to main page</a>
+
         <?php $mysqli->close(); ?>
     </div>
 </body>

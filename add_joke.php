@@ -3,6 +3,7 @@ session_start();
 
 if (!isset($_SESSION['username'])) {
     echo "Must log in first. Click <a href='login_form.php'>here</a> to login<br>";
+    echo "<a href='index.php'>Return to main page</a>";
     exit;
 }
 
