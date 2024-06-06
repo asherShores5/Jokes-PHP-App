@@ -20,16 +20,20 @@ if (empty($new_joke_q) || empty($new_joke_a)) {
     exit;
 }
 
-echo "<h2>Trying to add a new joke</h2><br>";
-
 if ($stmt = $mysqli->prepare("INSERT INTO Jokes_table (Joke_questions, Joke_answer, users_idusers) VALUES (?, ?, ?)")) {
     $stmt->bind_param("ssi", $new_joke_q, $new_joke_a, $userid);
-    $stmt->execute();
+    if ($stmt->execute()) {
+        echo "<h2>Joke added successfully!</h2><br>";
+        echo "Joke: " . htmlspecialchars($new_joke_q) . "<br>";
+        echo "Answer: " . htmlspecialchars($new_joke_a) . "<br><br>";
+    } else {
+        echo "<h2>Error adding joke</h2><br>";
+        echo "Error: " . $stmt->error . "<br>";
+    }
     $stmt->close();
-    echo "Joke: $new_joke_q<br>";
-    echo "Answer: $new_joke_a<br><br>";
 } else {
-    echo "Error: " . $mysqli->error;
+    echo "<h2>Database error</h2><br>";
+    echo "Error: " . $mysqli->error . "<br>";
 }
 
 // Ensure the connection is closed only once
