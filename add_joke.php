@@ -13,6 +13,13 @@ $new_joke_q = trim($_POST['newjoke']);
 $new_joke_a = trim($_POST['newanwser']);
 $userid = $_SESSION['userid'];
 
+// Check if inputs are not empty
+if (empty($new_joke_q) || empty($new_joke_a)) {
+    echo "Joke question and answer cannot be empty.<br>";
+    echo "<a href='index.php'>Return to main page</a>";
+    exit;
+}
+
 echo "<h2>Trying to add a new joke</h2><br>";
 
 if ($stmt = $mysqli->prepare("INSERT INTO Jokes_table (Joke_questions, Joke_answer, users_idusers) VALUES (?, ?, ?)")) {
@@ -25,9 +32,10 @@ if ($stmt = $mysqli->prepare("INSERT INTO Jokes_table (Joke_questions, Joke_answ
     echo "Error: " . $mysqli->error;
 }
 
-include 'search_all_jokes.php';
+// Ensure the connection is closed only once
+if ($mysqli) {
+    $mysqli->close();
+}
 
-$mysqli->close();
+echo "<a href='index.php'>Return to main page</a>";
 ?>
-
-<a href="index.php">Return to main page</a>
