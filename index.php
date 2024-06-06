@@ -46,37 +46,39 @@
         </form>
 
         <form class="form-horizontal" action="add_joke.php" method="post">
-            <fieldset>
-                <!-- Form Name -->
-                <legend>Add a joke</legend>
+          <fieldset>
 
-                <!-- Text input -->
-                <div class="form-group">
-                    <label class="col-md-4 control-label" for="newjoke">Enter the text of your new joke</label>
-                    <div class="col-md-6">
-                        <input id="newjoke" name="newjoke" type="text" class="form-control input-md" required>
-                        <span class="help-block">Enter the text of your new joke here</span>
-                    </div>
-                </div>
+          <!-- Form Name -->
+          <legend>Add a joke</legend>
 
-                <!-- Text input -->
-                <div class="form-group">
-                    <label class="col-md-4 control-label" for="newanser">The answer to your joke</label>
-                    <div class="col-md-5">
-                        <input id="newanser" name="newanwser" type="text" class="form-control input-md" required>
-                        <span class="help-block">Enter the punchline here</span>
-                    </div>
-                </div>
+          <!-- Text input -->
+          <div class="form-group">
+              <label class="col-md-4 control-label" for="newjoke">Enter the text of your new joke</label>
+              <div class="col-md-6">
+                  <input id="newjoke" name="newjoke" type="text" class="form-control input-md" required>
+                  <span class="help-block">Enter the text of your new joke here</span>
+              </div>
+          </div>
 
-                <!-- Button -->
-                <div class="form-group">
-                    <label class="col-md-4 control-label" for="submit"></label>
-                    <div class="col-md-4">
-                        <button id="submit" name="submit" class="btn btn-primary">Add a new joke</button>
-                    </div>
-                </div>
-            </fieldset>
-        </form>
+          <!-- Text input -->
+          <div class="form-group">
+              <label class="col-md-4 control-label" for="newanser">The answer to your joke</label>
+              <div class="col-md-5">
+                  <input id="newanser" name="newanwser" type="text" class="form-control input-md" required>
+                  <span class="help-block">Enter the punchline here</span>
+              </div>
+          </div>
+
+          <!-- Button -->
+          <div class="form-group">
+              <label class="col-md-4 control-label" for="submit"></label>
+              <div class="col-md-4">
+                  <button id="submit" name="submit" class="btn btn-primary">Add a new joke</button>
+              </div>
+          </div>
+
+          </fieldset>
+          </form>
 
         <?php
         $mysqli->close();
