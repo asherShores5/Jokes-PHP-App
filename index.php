@@ -9,23 +9,33 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <link rel="icon" type="image/x-icon" href="/img/favicon_io/favicon.ico">
+    <style>
+        .nav-buttons {
+            margin-bottom: 20px;
+        }
+        .nav-buttons a {
+            margin-right: 10px;
+        }
+    </style>
 </head>
 
 <body>
     <div class="container">
         <h1>Jokes Page</h1>
 
-        <?php
-        session_start();
+        <div class="nav-buttons">
+            <?php
+            session_start();
 
-        if (isset($_SESSION['username'])) {
-            echo '<a href="logout.php" class="btn btn-link">Click here to log out</a>';
-            echo "<p>Welcome, " . htmlspecialchars($_SESSION['username']) . "!</p>";
-        } else {
-            echo '<a href="login_form.php" class="btn btn-link">Click here to login</a>';
-            echo '<a href="register_new_user.php" class="btn btn-link">Click here to register</a>';
-        }
-        ?>
+            if (isset($_SESSION['username'])) {
+                echo '<a href="logout.php" class="btn btn-sm btn-primary">Log out</a>';
+                echo "<p>Welcome, " . htmlspecialchars($_SESSION['username']) . "!</p>";
+            } else {
+                echo '<a href="login_form.php" class="btn btn-sm btn-primary">Login</a>';
+                echo '<a href="register_new_user.php" class="btn btn-sm btn-primary">Register</a>';
+            }
+            ?>
+        </div>
 
         <br><br>
 
