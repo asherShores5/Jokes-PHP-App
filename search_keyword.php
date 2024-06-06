@@ -59,7 +59,7 @@ if ($stmt->num_rows > 0) {
 } else {
   echo "0 results";
 }
-  echo "<a href='index_joke.php'>Return to main page</a>";
+  echo "<a href='index.php'>Return to main page</a>";
 
 ?>
 

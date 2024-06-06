@@ -1,9 +1,6 @@
 <?php
 session_start();
 
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
-
 if (! $_SESSION['username']) {
     echo "Must log in first. Click <a href='login_form.php'here </a> to login<br>";
     exit;
@@ -33,5 +30,5 @@ include "search_all_jokes.php";
 
 ?>
 
-<a href="index_joke.php">Return to main page</a>
+<a href="index.php">Return to main page</a>
 

@@ -15,7 +15,5 @@ $mysqli = new mysqli($dbhost, $dbuser, $dbpassword, $dbdatabase, $dbport);
 // Check connection
 if ($mysqli->connect_error) {
     die("Connection failed: " . $mysqli->connect_error);
-} else {
-    echo "Connected successfully to the database.";
 }
 ?>
