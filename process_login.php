@@ -31,7 +31,7 @@ if ($stmt->num_rows == 1) {
         echo "Login success<br>";
         $_SESSION['username'] = $uname;
         $_SESSION['userid'] = $userid;
-        echo "<br><a href='index_joke.php'>Return to main page</a>";
+        echo "<br><a href='index.php'>Return to main page</a>";
         exit;
     } else {
         $_SESSION = [];
@@ -49,7 +49,7 @@ echo "<pre>";
 print_r($_SESSION);
 echo "</pre>";
 
-echo "<a href='index_joke.php'>Return to main page</a>";
+echo "<a href='index.php'>Return to main page</a>";
 ?>
 
 </div>

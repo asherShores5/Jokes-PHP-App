@@ -16,7 +16,7 @@ echo "<h2>Trying to add a new user</h2> user: " . $new_username . " pw: " . $new
 //Using REGEX for GOOOD passwords
 if ($new_password1 != $new_password2) {
     echo "<br>Passwords do not match.<br>";
-    echo "<a href='index_joke.php'><br>Return to home page<br><a>";
+    echo "<a href='index.php'><br>Return to home page<br><a>";
     exit;
 }
 
@@ -45,7 +45,7 @@ $result = $mysqli->query($sql) or die (mysqli_error($mysqli));
 
 if ($result->num_rows > 0) {
     echo "<br>The username " . $new_username . " is already in the database. Cannot register.<br>";
-    echo "<a href='index_joke.php'><br>Return to home page<br><a>";
+    echo "<a href='index.php'><br>Return to home page<br><a>";
     exit;
 }
 
@@ -64,7 +64,7 @@ if ($result) {
 else {
     echo "Something went wrong. Not Registered";
 }
-echo "<a href='index_joke.php'><br>Return to home page<br><a>";
+echo "<a href='index.php'><br>Return to home page<br><a>";
 
 
 ?>

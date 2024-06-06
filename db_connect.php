@@ -1,8 +1,12 @@
 <?php
 
+// Enable error reporting
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
 $dbhost = "172.17.0.2";
 $dbuser = "jokes_user";
-$dbpassword = "password";
+$dbpassword = "userpassword";
 $dbdatabase = "InfoSec";
 $dbport = "3306";
 
