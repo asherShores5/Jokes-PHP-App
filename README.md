@@ -2,6 +2,8 @@
 
 A web-based application for creating and storing jokes, built with HTML, PHP, MySQL, and jQuery.
 
+[EC2 Static IP Link to App](http://ec2-54-173-26-101.compute-1.amazonaws.com/Jokes-PHP-App/index.php)
+
 ## Features
 - Joke creation and database storage
 - Joke keyword search
