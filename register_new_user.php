@@ -84,9 +84,8 @@
                 </div>
             </fieldset>
         </form>
+        <a href="index.php">Return to main page</a>
     </div>
-
-    <a href="index.php">Return to main page</a>
 
     <script>
         $(document).ready(function() {
