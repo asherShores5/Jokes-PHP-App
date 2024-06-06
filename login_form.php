@@ -50,7 +50,12 @@
 
         <a href="index.php">Return to main page</a>
 
-        <?php $mysqli->close(); ?>
+        <?php 
+        // Ensure the connection is closed only once
+        if ($mysqli) {
+          $mysqli->close();
+        }
+        ?>
     </div>
 </body>
 

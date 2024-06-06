@@ -52,7 +52,10 @@
         }
 
         $stmt->close();
-        $mysqli->close();
+        // Ensure the connection is closed only once
+        if ($mysqli) {
+          $mysqli->close();
+        }
         ?>
         <a href="index.php">Return to main page</a>
     </div>

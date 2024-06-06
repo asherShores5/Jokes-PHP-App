@@ -30,7 +30,10 @@ if ($stmt->num_rows == 1) {
 }
 
 $stmt->close();
-$mysqli->close();
+// Ensure the connection is closed only once
+if ($mysqli) {
+    $mysqli->close();
+}
 
 echo "<a href='login_form.php'>Return to login page</a>";
 ?>

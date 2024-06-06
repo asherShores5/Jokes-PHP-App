@@ -43,7 +43,10 @@
                 echo "<p>No results found</p>";
             }
 
-            $mysqli->close();
+            // Ensure the connection is closed only once
+            if ($mysqli) {
+              $mysqli->close();
+            }
             ?>
         </div>
         <a href="index.php">Return to main page</a>

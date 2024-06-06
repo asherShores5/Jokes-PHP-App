@@ -13,9 +13,19 @@
 <body>
     <div class="container">
         <h1>Jokes Page</h1>
-        <a href="logout.php" class="btn btn-link">Click here to log out</a>
-        <a href="login_form.php" class="btn btn-link">Click here to login</a>
-        <a href="register_new_user.php" class="btn btn-link">Click here to register</a>
+
+        <?php
+        session_start();
+
+        if (isset($_SESSION['username'])) {
+            echo '<a href="logout.php" class="btn btn-link">Click here to log out</a>';
+            echo "<p>Welcome, " . htmlspecialchars($_SESSION['username']) . "!</p>";
+        } else {
+            echo '<a href="login_form.php" class="btn btn-link">Click here to login</a>';
+            echo '<a href="register_new_user.php" class="btn btn-link">Click here to register</a>';
+        }
+        ?>
+
         <br><br>
 
         <?php
@@ -45,43 +55,48 @@
             </fieldset>
         </form>
 
+        <?php if (isset($_SESSION['username'])): ?>
         <form class="form-horizontal" action="add_joke.php" method="post">
-          <fieldset>
+            <fieldset>
+                <!-- Form Name -->
+                <legend>Add a joke</legend>
 
-          <!-- Form Name -->
-          <legend>Add a joke</legend>
+                <!-- Text input -->
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="newjoke">Enter the text of your new joke</label>
+                    <div class="col-md-6">
+                        <input id="newjoke" name="newjoke" type="text" class="form-control input-md" required>
+                        <span class="help-block">Enter the text of your new joke here</span>
+                    </div>
+                </div>
 
-          <!-- Text input -->
-          <div class="form-group">
-              <label class="col-md-4 control-label" for="newjoke">Enter the text of your new joke</label>
-              <div class="col-md-6">
-                  <input id="newjoke" name="newjoke" type="text" class="form-control input-md" required>
-                  <span class="help-block">Enter the text of your new joke here</span>
-              </div>
-          </div>
+                <!-- Text input -->
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="newanser">The answer to your joke</label>
+                    <div class="col-md-5">
+                        <input id="newanser" name="newanwser" type="text" class="form-control input-md" required>
+                        <span class="help-block">Enter the punchline here</span>
+                    </div>
+                </div>
 
-          <!-- Text input -->
-          <div class="form-group">
-              <label class="col-md-4 control-label" for="newanser">The answer to your joke</label>
-              <div class="col-md-5">
-                  <input id="newanser" name="newanwser" type="text" class="form-control input-md" required>
-                  <span class="help-block">Enter the punchline here</span>
-              </div>
-          </div>
-
-          <!-- Button -->
-          <div class="form-group">
-              <label class="col-md-4 control-label" for="submit"></label>
-              <div class="col-md-4">
-                  <button id="submit" name="submit" class="btn btn-primary">Add a new joke</button>
-              </div>
-          </div>
-
-          </fieldset>
-          </form>
+                <!-- Button -->
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="submit"></label>
+                    <div class="col-md-4">
+                        <button id="submit" name="submit" class="btn btn-primary">Add a new joke</button>
+                    </div>
+                </div>
+            </fieldset>
+        </form>
+        <?php else: ?>
+        <p>Please <a href="login_form.php">login</a> to add a joke.</p>
+        <?php endif; ?>
 
         <?php
-        $mysqli->close();
+        // Ensure the connection is closed only once
+        if ($mysqli) {
+            $mysqli->close();
+        }
         ?>
     </div>
 </body>

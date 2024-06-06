@@ -62,5 +62,8 @@ if ($stmt->execute()) {
 }
 
 $stmt->close();
-$mysqli->close();
+// Ensure the connection is closed only once
+if ($mysqli) {
+    $mysqli->close();
+}
 ?>
