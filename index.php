@@ -16,7 +16,6 @@
 <a href="logout.php">Click here to log out<a>
 <a href="login_form.php">Click here to login<a>
 <a href="register_new_user.php">Click here to register<a>
-<a href="verify/index.php">Click here to verify<a>
 <br><br>
 
 <?php
