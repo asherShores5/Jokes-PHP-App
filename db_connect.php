@@ -4,7 +4,7 @@
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
-$dbhost = "172.17.0.2";
+$dbhost = "127.0.0.1";
 $dbuser = "jokes_user";
 $dbpassword = "userpassword";
 $dbdatabase = "InfoSec";
