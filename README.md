@@ -2,7 +2,35 @@
 
 A web-based application for creating and storing jokes, built with HTML, PHP, MySQL, and jQuery.
 
-[EC2 Static IP Link to App](http://ec2-54-173-26-101.compute-1.amazonaws.com/Jokes-PHP-App/index.php)
+## Instructions to Use the Link to Start the Service and Access the EC2 Instance
+1. Start the EC2 Instance:
+- Open your web browser and navigate to the following URL: [Start EC2 Instance](https://h2kueaswak.execute-api.us-east-1.amazonaws.com/prod/start-jokes-app).
+- This will trigger the Lambda function to start the EC2 instance.
+
+2. Retrieve the Public IP Address:
+- The response from the above URL will contain a JSON object.
+- Look for the key body in the JSON response. It will contain a message similar to: EC2 instance started and will stop after 10 minutes. Public IP: <your_public_ip>.
+- Note the <your_public_ip> provided in the response.
+
+3. Visit the Website:
+- Open a new tab in your web browser.
+- Enter the public IP address noted in the previous step in the address bar.
+- Press Enter to visit the website hosted on your EC2 instance.
+- Must use http NOT https
+
+Example Response and Usage
+- Example JSON Response:
+   ```json
+      {
+          "statusCode": 200,
+          "body": "EC2 instance started and will stop after 10 minutes. Public IP: 54.123.45.67"
+      }
+   ```
+- Example Public IP Address:
+   - In this example, the public IP is 54.123.45.67.
+   - To visit the website, you would enter http://54.123.45.67 in your web browser’s address bar.
+
+Follow these steps each time you need to start the EC2 instance and access your website. The instance will automatically stop after 10 minutes.
 
 ## Features
 - Joke creation and database storage
