@@ -2,6 +2,9 @@
 
 A web-based application for creating and storing jokes, built with HTML, PHP, MySQL, and jQuery.
 
+![image](https://github.com/asherShores5/Jokes-PHP-App/assets/71547146/1ab07b58-c5de-467f-ad53-b3f7d5ce344a)
+
+
 ## Instructions to Use the Link to Start the Service and Access the EC2 Instance
 1. Start the EC2 Instance:
 - Open your web browser and navigate to the following URL: [Start EC2 Instance](https://h2kueaswak.execute-api.us-east-1.amazonaws.com/prod/start-jokes-app).
