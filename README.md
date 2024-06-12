@@ -29,6 +29,11 @@ Example Response and Usage
 - Example Public IP Address:
    - In this example, the public IP is 54.123.45.67.
    - To visit the website, you would enter http://54.123.45.67 in your web browser’s address bar.
+- Errors:
+   - You may see an error that says: "The instance 'i-09798536a5d851b41' is not in a state from which it can be started."
+      - If this is the case, simply wait 30 seconds and try again, this is caused by trying to start the instance while in a "shutting down" state
+   - You may otherwise see and error that says: "Public IP: No public IP assigned yet, please wait 10 seconds and refresh this page (can take up to a minute to load IP)"
+      - Simply follow the instructions and wait adn continue to refresh the page until the IP is served.
 
 Follow these steps each time you need to start the EC2 instance and access your website. The instance will automatically stop after 10 minutes.
 
